@@ -1,0 +1,2378 @@
+In this lesson, you will learn the database concept and its usage in our daily activities. We will also refer to the basics of Structured Query Language (SQL) which is used to interact with the databases.
+
+Getting Started with Databases
+What is a database?
+In simple terms, a database is a collection of data stored in a computer system. Here are other definitions of a database:
+ 
+According to Wikipedia:
+A database is an organized collection of data, generally stored and accessed electronically from a computer system.
+
+According to Oracle:
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+
+People use data and databases with or without awareness in their daily life activities.
+
+How are databases used in the real-world?
+
+
+
+Databases are almost everywhere. Your bank, your grocery store, an app on your cellphone, websites all use databases to keep track of your data. When you access a website, the website starts to collect your data (e.g. accessing date and time, your location, your browser info) and store it in its database.
+
+Let's take another example. When you order a product on a commercial website, your order is stored in a database. You withdrew money from your bank account. Your bank stores this transaction in the database. Social media platforms such as Facebook, Instagram, Twitter use databases to store data like members, their friends, member activities, messages, advertisements, etc.
+
+(Note: In diagrams, databases are represented as a cylinder shape.)
+
+Applications of the databases
+Category	Usage
+Banking&Finance	Customer information, accounts, transactions
+Education	Student information, course registrations, grades
+Telecommunication	Internet&phone usage, subscriber information
+Human resources	Employees, managers, salaries, hire&termination dates
+Websites	Products, visitors, website traffic statistics
+Transportation	Passenger, reservation and schedule information
+
+☍ Discussion: Think about other applications of databases. Try to give some examples. 
+A database is typically controlled by a database management system (DBMS). Data and DBMS along with the applications that are associated with them are called a database system, often shortened to just database.
+
+Now that we've learned what the database is, we can move on to what is inside the database, how the data is stored in the database.
+
+The information inside the database is grouped into tables. A table in a database is called a database table. Tables are the basic unit of data storage in databases. We talked about the definition of the database in the previous lesson. We used the term structured data. Structured data here means table. A table consists of columns and rows. You may think of it as an Excel or Google spreadsheet. Although there are similarities between the database table and Excel/Google spreadsheet, they are different things. We won't get into details here. 
+
+
+
+
+Anatomy of a Table
+
+A table is made up of columns and rows. A column is a piece of data stored by the table. A row is a single set of columns that describe the attributes of a single thing. Columns should have a unique name. Columns and rows together make up a table. 
+
+💡Tips:
+In database world;
+A column is also called a field or attribute,
+A row is also called a record or a tuple,
+A table is also called a relation.
+Column header names are written in lowercase, and there shouldn't be any space in a single name. Put an underscore between them. For instance, don't write "last name" as a header name, instead, write "last_name". Table names are also written in lowercase and without space (employees, customers, etc.)
+
+
+
+
+
+A database can consist of one or more tables. In most cases, more than one table. Each table has a unique name, such as employees, departments, or customers, etc. 
+
+example_timeExample
+Let's take the case of a company database. Suppose that it has two tables. One is employees, and other is departments. Take a closer look at the employees table below. Here is the breakdown of the table.
+Table's name is employees.
+The table has seven columns (aka, fields or attributes)
+The table has ten rows (aka, records or tuples)
+Table's column header names are:  emp_id, first_name, last_name, salary, job_title, gender, hire_date
+Inside the employees' table, there is data about each employee in the company
+
+
+Of course, a real-world company would have many more employees. We use a small table to illustrate concepts. 
+
+Type of Databases
+Typically, there are two main database storage types:
+
+Relational Database - SQL
+
+Non-Relational Database - NoSQL
+
+A relational database is a type of database that stores and provides access to data points that are related to one another. Relational databases are based on the relational model, an intuitive, straightforward way of representing data in tables. In a relational database, each row in the table is a record with a unique ID called the key. The columns of the table hold attributes of the data, and each record usually has a value for each attribute, making it easy to establish the relationships among data points.
+
+Actually, the term "relational database" was invented by E. F. Codd at IBM in 1970. Codd introduced the term in his research paper "A Relational Model of Data for Large Shared Data Banks". In this paper and later papers, he defined what he meant by "relational". One well-known definition of what constitutes a relational database system is composed of Codd's 12 rules. However, no commercial implementations of the relational model conform to all of Codd's rules, so the term has gradually come to describe a broader class of database systems, which at a minimum:
+
+Present the data to the user as relations (a presentation in tabular form, i.e. as a collection of tables with each table consisting of a set of rows and columns);
+Provide relational operators to manipulate the data in tabular form.
+A software system used to maintain relational databases is called a Relational Database Management System (RDBMS).  Here are some examples of RDBMS:
+
+Amazon Aurora
+Amazon RDS
+Microsoft SQL Server 
+Oracle Database
+MySQL
+IBM DB2
+Maria DB
+PostgreSQL
+SQLite
+SQL (stands for Structured Query Language) is accepted as the standard Relational Database Management System (RDBMS) language. So we usually prefer to call Relational Database as SQL and Non-Relational database as NoSQL. 
+
+Until now in the course, what we've shown you some relational database features (structured data, tables, rows, columns, etc). Of course, there are more than those features coming in the upcoming parts of the course. During the pre-class phase of the SQL course, we will use SQLite as an RDBMS tool. 
+
+💡Tips:
+SQLite is a relational database management system contained in a C library. In contrast to many other database management systems, SQLite is not a client–server database engine. Rather, it is embedded into the end program. (Wikipedia)
+Structured Query Language (SQL)
+
+SQL stands for Structured Query Language and used to communicate with relational databases. SQL is a declarative language, not a procedural language. You write a single SQL declaration and hand it to the DBMS. The DBMS then executes internal code, which is hidden from us. 
+
+💡Tips:
+Declarative paradigm is where you say what you want without having to say how to do it. With procedural paradigm (used in JAVA, C), you have to specify exact steps to get the result. SQL is declarative than procedural since the queries don't specify steps to produce the result.
+SQL in it's purest form is not a programming language, but a query language. Because, it needs to be able to perform loops and control structures. However, with some extensions, SQL can have looping and control structures but they exist outside or rather as an appendage to the original SQL spec. In this manner, some argue that SQL is a programming language.
+
+Most commercial database systems employ the SQL language. With SQL, you can access or manipulate data stored in the database. There are different types of access. These are:
+
+Retrieval of data from the database
+
+Insertion of new data into the database
+
+Updating the data in the database
+
+Deletion of data from the database
+
+Besides, you can create new databases and tables using SQL. 
+
+
+
+
+In the next section, we will focus on the retrieval portion of the SQL. There is a particular word that is called query for retrieval information from the database. You will often encounter this word during your SQL course journey.
+
+ⓘ A query is a statement asking for the retrieval of information from the database.
+
+SQL Language Elements
+SQL language structure is easy to understand. It looks like plain English. Here is an example SQL statement:
+
+
+If we apply this SQL statement to our employees table, we get a single column that is first_name. See the command in action below: (Note: if the below gif doesn't play fast, please refresh the page)
+
+
+
+The whole command SELECT first_name FROM employees; is called statement. Let's breakdown of this statement. Herein SELECT, FROM words are keywords. They are special commands for SQL. first_name, employees are identifiers. SQL statements end with a semicolon (;).  SQL Language Elements is also called SQL Syntax. 
+
+
+
+There are other SQL elements which we will cover later in the course. In the next part, we will introduce you SELECT statement in detail. We will learn the syntax and start to write our commands.
+
+
+
+
+SELECT Statement
+Introduction
+In this lesson, you will focus on the SELECT statement in SQL. Generally;
+The SELECT statement is used to select data from a database.
+You can retrieve rows from the columns of the table by using this statement. 
+SELECT statement is used with FROM keyword.
+The syntax of the SELECT statement can be seen below.
+
+By using this query, you explain to SQL that you want to see the data from a column/columns in the given table. The result of the query is stored in a result table called result-set.
+
+
+
+
+Basic Syntax
+The term syntax in SQL refers to strict structural patterns used when creating a query. As in any other programming language, SQL also has some general syntax rules to follow. But these rules are very flexible compared with others. Let' look at the syntax of the last query again.
+
+
+
+As you see, SELECT and FROM words were written in uppercase, and the query ends with a semicolon. Is this usage example a syntax rule? In SQL syntax;
+
+SQL statements start with a keyword like SELECT, INSERT, UPDATE, DELETE, etc. and all the statements end with a semicolon (;).
+The semicolon at the end indicates that the statement is completed and ready to be executed.
+SQL is also case insensitive, which means you can use both SELECT and select in your query. They mean the same thing for SQL.
+Writing SQL commands in the upper-case is the most common and preferred style. But, you can write the same query in both ways as below:
+
+
+
+White spaces and empty lines are ignored in SQL. So, the below query is correct by all means.
+
+💡 Tip: To maintain your query clean and more readable, it's not recommended to use unnecessary empty lines and white spaces .
+
+Selecting Multiple Columns
+
+
+Assume that;
+
+You have a table named as table1 like above.
+You want to see only column1 and column2 data in it.
+Then, you should write a query like this:
+query :
+
+
+After you execute this query, SQL will return you only the data that you want from column1 and column2 of table1.
+
+output :
+
+
+
+Selecting All Columns
+
+
+Assume that; this time you want to see all of the data in your table.
+
+You have 3 columns in your table, so you should write a query like this.
+
+query :
+
+
+Because you wrote the names of all the columns in the SELECT statement, you will get the whole table via this query.
+
+output :
+
+
+Ok, it's not difficult to write 3 columns in this case, but think about you have a big table with lots of columns.
+Would you have to write all the column names in your query?
+
+Selecting All Columns (Special Character)
+The asterisk character “*” has special meaning in SQL.
+
+To retrieve all of the information from your table, an asterisk (*) character can be used after the SELECT command.
+
+So, you wouldn't have to type in each of the column names separately.
+
+query :
+
+
+By using the asterisk character “*”, you can get every column with all of the data in it as a result-set of the query.
+
+output :
+
+
+
+DISTINCT Clause
+Introduction
+In this lesson, you will focus on the SELECT DISTINCT statement in SQL. Columns in the tables may often contain some duplicate values, but you may only need the distinct values as a result. Here comes the SELECT statement with the DISTINCT clause.
+
+ⓘ Info: We have learned what the statement and keyword are. Here is another term which we introduced to you in this lesson: Clause. We want to define each three terms to help you gain better understanding. We will use query SELECT first_name, last_name, gender FROM employees; as an example to explain the concepts.
+Keyword: These are the individual elements which are predefined. In the example these are SELECT and FROM seperately.
+Clause: It's a part of a SQL statement. In our example, these ere SELECT first name, last name, gender and FROM employees.
+Statement: The complete query is a statement. A statement may consist of two or more clauses.
+The SELECT DISTINCT is used to return only distinct (different/unique) values to eliminate duplicate rows in a result set. Here is the syntax of the DISTINCT clause:
+
+
+By using this query, you explain to SQL that you only want to see the unique/distinct data from the column/columns in the given table
+No Duplicated Rows
+
+
+Assume that;
+
+ You have a table named as student_table like above.
+ You want to see only UNIQUE Values in student_column in the result set.
+ Then, you should write a query like this. 
+query :
+
+After the execution of the query, you will get a result set like below.
+output :
+
+As you see in the result set, the query returned all the rows in the student column. Because all the rows in that column have unique values. So, in this example, we can see that if there are no duplicated rows in a column, SELECT and SELECT DISTINCTgives the same result.
+
+Duplicated Rows
+
+
+Let's write a different query to select unique lesson names from the lesson column. You should write a query like this.
+query :
+
+
+There are 7 rows in the student_table. But the result set has only 4 rows. Why?
+ Lesson column consists of the following lessons; 3 Mathematics, 2 Physics, a Literature, and a Chemistry.
+ So there are 3 duplicated rows of which 2 Mathematics and 1 Physics.
+ DISTINCT clause eliminated 3 rows and so we get 4 unique rows.
+
+
+
+
+
+WHERE & LIMIT Clauses
+Introduction
+In this lesson, you will focus on the WHERE clause in SQL. The WHERE clause is used to filter records.
+ It allows you to define a specific search condition for the result set returned by a query.
+ So, the result set only consists of the records that fulfill the predefined condition(s).
+The WHERE clause is mostly used with the SELECT statement. In addition to the SELECT statement, it may also be used with some other statements like DELETE and UPDATE. It's used in a query after the FROM clause as in the below example.
+
+By using this query, you explain to SQL that you only want to get the data that pass the defined condition(s) as a result set.
+
+WHERE Clause - Operators
+You can use the following operators in the WHERE clause. 
+
+
+
+Assume that;
+
+You have a table named student_table as above. 
+
+If we want to select only the records of which grade is higher than 70 in the result set, then we should write a query like this.
+
+query :
+
+After the execution of the query, you will get a result set like below.
+output:
+
+
+
+Example-1
+
+
+
+
+You want to see only the records of which lesson is Mathematics in the result set.
+Then, you should write a query like this.
+query :
+
+
+
+After the execution of the query, you will get a result set like below.
+
+output :
+
+
+
+
+Example-2
+
+Let's write a different query to select only the records of which grade is lower than 70 in the result set. Our  query will be as below:
+query :
+
+After the execution of the query, you will get a result set like below.
+output:
+
+
+LIMIT Clause
+In this lesson, you will focus on the LIMIT clause in SQL. The LIMIT clause is used to filter records. It constrains the number of rows returned by a query. Assume that your query returns one thousand rows. But you only want to see the first 10 rows in the result set. In such cases, we use LIMIT clause to obtain the desired output. 
+
+Here is the syntax of the LIMIT clause.
+
+Let's select all the columns of the student_table and return the first 3 rows.
+
+query:
+
+output:
+
+We can also combine LIMIT with WHERE. LIMIT clause is placed after the WHERE clause. Let's select the students whose grade is higher than 70 and let our query return the first 2 rows.
+
+query:
+
+output:
+
+
+
+
+
+ORDER BY Clause
+
+SELECT statement returns records in an unspecified order. In case you want to retrieve data in alphabetical or numeric order, we use ORDER BY keyword. 
+
+The ORDER BY keyword sorts the result-set in descending or ascending order.  
+
+By default ORDER BY keyword sorts the records in ascending order. Use the keyword DESC to sort the records in descending order. You can also use ASC to sort the data in ascending order. You have to use either of them.
+
+Here is the syntax of ORDER BY:
+
+
+Herein "|" symbol means "use either ASC or DESC". If you don't use any of them, the default value is ASC (ascending order).
+Let's see ORDER BY in an action.
+
+
+Here is our employees table. I want to sort the first_name column in alphabetical order (A-Z). This is the appropriate query:
+
+query :
+
+
+After executing the query, we get the result table below. Our table is now sorted by the first names in ascending order. Not only the first_name column is sorted, but also other columns are affected by the sort accordingly. 
+
+output :
+
+
+You could write the query which returns the same result table as below. Since ASC is the default order value in case you don't specify any ascending or descending order, both queries will yield the same result.
+
+
+Sorting in Descending Order
+In the previous part, we sorted our table by the first names of the employees in ascending order. What if we asked you to sort it in descending order (Z-A)? You would probably say that "I use the DESC keyword." You're right. Let's write the query.
+
+query :
+
+
+Below is the query result. Other columns are also affected.
+
+output :
+
+
+💡 Tip: When you sort the data, the original table's order is not affected. Remember from the previous lessons that a query returns a result table. Thus, we sort the result table, not the original one.
+Until now, we've sorted the column containing textual data. It's time to sort numerical data in our table. You may wonder whose salary is the highest. Let's write the query. This time we don't want to retrieve all columns instead we want first name, last name and salary.
+
+query :
+
+Robert Gilmore, Operations Director, has the highest salary. We sorted the result table from largest to smallest.
+
+Sorting By Multiple Columns
+We are now able to sort by one column using the ORDER BY keyword. In some cases, we may need to sort our data by two columns or more. To do this, separate the columns by a comma. Here is the syntax:
+
+
+
+
+Above is our original table. Let's sort it by gender in descending order. 
+
+query :
+
+
+
+Here is the result-set:
+
+output :
+
+In the above output, you can see that the result table is sorted in descending order according to the gender of the employees. Suppose that we also want to sort it by first names. 
+
+
+
+In this case, we have to append the first_name column to our existing query. Use a comma to add the new column.
+
+query :
+
+Here is the output:
+
+output :
+
+
+In the above example, we first sorted the data by gender, then we sorted by first names.
+
+ORDER BY Clause
+
+ORDER BY Clause with WHERE Clause
+In this part, we will use ORDER BY with the WHERE clause. 
+
+This is the syntax:
+
+
+ORDER BY clause is placed after the WHERE clause. 
+
+Technically, any SQL statement can be written on a single line. However, it will become difficult to read when you start to write long queries. The solution in such cases is to organize the code, not just horizontally, but also vertically. This is called beautifying. Let's rewrite the syntax above. 
+
+
+
+As you see that we put each clause on a separate line. Now let's continue with an example. 
+
+
+
+
+Assume that we try to find the employees whose salary is higher than $80,000. Next, we will sort it by first_name in descending order. 
+
+Here is the query:
+
+query :
+
+
+This is our result table:
+
+output :
+
+
+
+We first returned the employees whose salary is higher than $80,000. Next, we sorted this by the first names in descending order. Alright, we now know how to sort our table. It's time to put them into practice.
+
+
+
+
+
+AND, OR & NOT Operators
+
+
+Introduction
+In SQL, AND, OR & NOT keywords are called operators. In particular, they are called logical operators. Their purposes are filtering the data based on conditions. 
+
+The WHERE clause can be combined with AND, OR & NOT operators. Let's start with the AND operator. 
+
+
+
+
+
+
+
+
+AND Operator
+The AND operator is used with the WHERE clause and combines multiple expressions. It returns only those records where both conditions (in WHERE clause) evaluate to True. The syntax has the following form in the WHERE condition:
+
+
+
+
+Now, display the employees whose title is a data scientist and gender is male. You would be asked for the same thing as "show me the male data scientists in the company. " They are both the same. 
+
+
+
+
+
+There are two conditions here. One is the title of the employee is a data scientist, other is the gender of his/her should be male. The correct search condition in where clause is job_title = 'data scientist' AND gender = 'Male'.
+
+Let's write the query.
+
+query :
+
+
+
+There is only one record that meets both conditions. So only one record returns. 
+
+output :
+
+
+
+
+OR Operator
+The OR operator is used with the WHERE clause and combines multiple expressions. It displays the record where either one of conditions (in WHERE clause) evaluates to True. The syntax has the following form in the WHERE condition. 
+
+
+
+
+Display the employees whose title is a data scientist or gender is male.
+
+
+
+
+
+query :
+
+
+
+The query returns all the male employees and data scientists. Since there is a female data scientist, the result table also displays it.
+
+
+output :
+
+As we mentioned above, the records which meet either of the conditions return as a result. 
+
+
+NOT Operator
+
+
+The NOT operator is used to negate a condition in the WHERE clause. NOT is placed right after WHERE keyword. You can use it with AND & OR operators. Here is the syntax of NOT operator.
+
+
+
+Display the male employees.
+
+At first, you may write this query:
+
+
+
+We can also write it in another way using NOT operator.
+
+query :
+
+Both queries will yield the same result below.
+
+output :
+
+
+
+
+
+
+
+BETWEEN OPERATOR
+
+
+Introduction
+The BETWEEN operator is used for comparison in WHERE clauses. It's a comparison operator. You can use it to test if a value is in a range of values. If the value is in the specified range, the query returns all records fallen within that range. 
+
+The following displays the syntax of the BETWEEN operator:
+
+
+
+
+Note that the BETWEEN operator is inclusive. The above syntax can be written as follows:
+
+
+
+☝ Important: The BETWEEN operator is inclusive. To specify an exclusive range, use the greater than (>) and less than operators (<).
+
+
+
+If we need to find the names of the employees with salary amounts between $80,000 and $90,000, we can use the BETWEEN comparison operator to write:
+
+query :
+
+
+
+Here is the output:
+
+output :
+
+
+You could also write the above query as follows:
+
+They both return the same result table.
+
+NOT BETWEEN
+We can use NOT BETWEEN to negate the result of the BETWEEN operator. The following is the syntax:
+
+
+
+
+For instance, you need to find the employees whose salary is not between $80,000 and $90,000. Here is the query:
+
+query :
+
+
+
+output :
+
+
+
+There are seven employees whose salary is not between $80,000 and $90,000.
+
+
+
+BETWEEN with Date Example
+It's also possible to use the BETWEEN operator with dates. 
+
+Assume that we try to find employees who have joined the company from June 1, 2018 to March 31, 2019. We also want to sort by hire date in ascending order.
+
+
+
+Let's write the query. 
+
+
+☝ Important: Please enclose your date values with single quote (') and use YYYY-MM-DD date format in your query.
+query :
+
+
+
+output :
+
+
+
+There are five employees who have joined the company from June 1, 2018 to March 31, 2019.
+Now, it's time to put your theory into practice. Enjoy your playground. Feel free to write as many queries as you wish.
+
+
+
+
+IN Operator
+
+Introduction
+The IN operator is used to determine whether a value matches any value in a list. We use IN operator with WHERE clause. Following is the syntax of the IN operator:
+
+
+
+Suppose that you are building a team in your company. The team is comprised of Data Scientist and Business Analyst. You need to search the employee table to find the right candidates for your team. You may come up with this query:
+
+query :
+
+
+That's a correct query which returns this:
+
+output :
+
+
+
+Three people meet your criteria.
+
+However, there is a better operator in case you try to match a value in a specified list. We may rewrite the query as follows:
+
+
+
+The query retrieves the employees whose job title is Data Scientist or Business Analyst. Herein the value list is ('Data Scientist', 'Business Analyst'). When any value in the job title column matches one of the values in the list, the related row is returned.
+
+An Extended Value List
+Suppose that you have decided to add teammates to your existing team. In addition to data scientist and business analyst, you are in need of a project manager and web developer. You modified the old query in which you used the OR operator.
+
+Here is the new query:
+
+query :
+
+
+Below is the output:
+
+output :
+
+
+
+Then you thought that it's a better idea to use IN operator and revised the query using IN operator as below:
+
+
+This query also returns the same result table. Six people meet your criteria.
+As you can see that using the IN operator makes your code shorter.
+
+💡 Tip: If you have a query in which you use many OR operators, consider using the IN operator instead. This will make your query more readable.
+Please write all the queries in the playground.
+
+NOT IN Operator
+In this part, we are going to add the keyword NOT to our IN operator.  You're building a team again. This time you decided to select the right candidates in a different way. You don't want to include Operations Director, HR Manager, and Sales Manager in the team.
+
+
+
+If we know which values we don't want to include in a list, we can use NOTkeyword with IN. NOT gives you the opposite results, anything that doesn't match the list. Use NOT just before IN operator.
+Let's write the query:
+
+ query :
+
+
+
+The following is the output:
+
+
+There are seven employees whose job title is not in the Operations Director, HR Manager, Sales Manager list. Alright, we completed the IN operator.
+
+
+
+
+LIKE Operator
+
+
+Introduction
+There are some cases where you don't know exactly the complete value you query. For instance, consider that you're trying to recall a student's county info from our student_info table. You know that the county's name starts with 'Wo'. In such cases, we use LIKE operator.  We combine LIKE operator with WHERE clause.
+
+The general syntax is:
+
+
+
+After LIKE keyword, we construct a pattern. SQL provides two special characters for constructing patterns. These are also called wildcards.
+
+Percent (%): The % character matches any sequence of zero or more characters.
+Underscore ( _ ): The _ character matches any single character.
+Patterns are case insensitive. Uppercase characters do match lowercase characters or vice versa. Let's show pattern matching in the following examples. You will find some pattern examples which can be used after the LIKE operator. Patterns are written in single quotes.
+
+'Out%' pattern matches any string beginning with "Out" such as "Outro".
+'s%' pattern matches any string that starts with "s" such as "silk", "soup", etc.
+'%per%' pattern matches any string containing "per" such as "percentile" and "peeper". 
+'s_n' pattern matches "son", "sun", etc. 
+'__te' pattern matches "mate", "Kate", "kate", etc.
+
+Now. Let's try to find a solution to our question at the beginning. We were trying to recall the county name which starts with "Wo". Since we don't know how many letters coming after "Wo", it's a good idea to use % wildcard here. Here is the pattern 'Wo%'. 
+
+
+This is the query:
+
+query :
+
+
+
+Result table:
+
+output :
+
+
+
+
+% wildcard matches with the letters 'od' in the Wood word. Remember that %wildcard matches any sequence of zero or more characters. 
+
+
+
+Since LIKE operator is case insensitive, you could write the pattern LIKE 'wo%' . Both patterns will produce the same results.
+
+Percent Character Example
+In this part, we continue with another example using % wildcard. 
+
+Suppose that we try to find front-end and back-end developers in our student_info table. If we look at the field column, we see that the word "Developer" is found at the end of the each field value. So, what do you think the pattern will be?
+
+
+The pattern is '%Developer'. Herein % wildcard will include all the characters before the word "Developer". Let's write the query:
+
+query :
+
+
+
+The output of the query:
+
+output :
+
+
+There are 12 students whose field is Back-End Developer or Front-End Developer. We could write the pattern as '%Developer%'. This also returns the same result table. There is no character coming after the word "Developer". But remember % wildcard also matches zero characters.
+
+In the previous part, we said that LIKE operator is case-insensitive. That means instead of '%Developer', we can write '%developer', '%DEVELOPER' even '%DEveloper'. All those patterns will match "Back-End Developer" or "Front-End Developer". 
+
+However, if you want to make LIKE operator case-sensitive, we need to use PRAGMA statement as follows:
+
+
+
+Write the query again using PRAGMA statement and pattern '%developer'.
+
+query :
+
+
+The output of the new query is a blank table.
+
+output :
+
+
+In case you change the setting of LIKE operator from case-insensitive to case-sensitive, you need to construct the pattern as '%Developer' to match.
+
+Underscore Character Example
+The underscore _ wildcard matches a single character. Think of it as representing a single character. For instance, the following query finds the employee whose first_name is "Elvis".
+
+
+
+query :
+
+
+Here is the output of the query above.
+
+output :
+
+
+
+
+The _ wildcard in the pattern matches "v" letter in "Elvis" in the first name column. 
+
+Which first name the 'Li__a' pattern will match in the first name column? The answer is "Linda". Note that there are two underscore characters in the 'Li__a' pattern. Thus, those will match "nd" letters in "Linda" in the first nameIn this lesson, you will learn the database concept and its usage in our daily activities. We will also refer to the basics of Structured Query Language (SQL) which is used to interact with the databases.
+
+Getting Started with Databases
+What is a database?
+In simple terms, a database is a collection of data stored in a computer system. Here are other definitions of a database:
+ 
+According to Wikipedia:
+A database is an organized collection of data, generally stored and accessed electronically from a computer system.
+
+According to Oracle:
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+
+People use data and databases with or without awareness in their daily life activities.
+
+How are databases used in the real-world?
+
+
+
+Databases are almost everywhere. Your bank, your grocery store, an app on your cellphone, websites all use databases to keep track of your data. When you access a website, the website starts to collect your data (e.g. accessing date and time, your location, your browser info) and store it in its database.
+
+Let's take another example. When you order a product on a commercial website, your order is stored in a database. You withdrew money from your bank account. Your bank stores this transaction in the database. Social media platforms such as Facebook, Instagram, Twitter use databases to store data like members, their friends, member activities, messages, advertisements, etc.
+
+(Note: In diagrams, databases are represented as a cylinder shape.)
+
+Applications of the databases
+Category	Usage
+Banking&Finance	Customer information, accounts, transactions
+Education	Student information, course registrations, grades
+Telecommunication	Internet&phone usage, subscriber information
+Human resources	Employees, managers, salaries, hire&termination dates
+Websites	Products, visitors, website traffic statistics
+Transportation	Passenger, reservation and schedule information
+
+☍ Discussion: Think about other applications of databases. Try to give some examples. 
+A database is typically controlled by a database management system (DBMS). Data and DBMS along with the applications that are associated with them are called a database system, often shortened to just database.
+
+Now that we've learned what the database is, we can move on to what is inside the database, how the data is stored in the database.
+
+The information inside the database is grouped into tables. A table in a database is called a database table. Tables are the basic unit of data storage in databases. We talked about the definition of the database in the previous lesson. We used the term structured data. Structured data here means table. A table consists of columns and rows. You may think of it as an Excel or Google spreadsheet. Although there are similarities between the database table and Excel/Google spreadsheet, they are different things. We won't get into details here. 
+
+
+
+
+Anatomy of a Table
+
+A table is made up of columns and rows. A column is a piece of data stored by the table. A row is a single set of columns that describe the attributes of a single thing. Columns should have a unique name. Columns and rows together make up a table. 
+
+💡Tips:
+In database world;
+A column is also called a field or attribute,
+A row is also called a record or a tuple,
+A table is also called a relation.
+Column header names are written in lowercase, and there shouldn't be any space in a single name. Put an underscore between them. For instance, don't write "last name" as a header name, instead, write "last_name". Table names are also written in lowercase and without space (employees, customers, etc.)
+
+
+
+
+
+A database can consist of one or more tables. In most cases, more than one table. Each table has a unique name, such as employees, departments, or customers, etc. 
+
+example_timeExample
+Let's take the case of a company database. Suppose that it has two tables. One is employees, and other is departments. Take a closer look at the employees table below. Here is the breakdown of the table.
+Table's name is employees.
+The table has seven columns (aka, fields or attributes)
+The table has ten rows (aka, records or tuples)
+Table's column header names are:  emp_id, first_name, last_name, salary, job_title, gender, hire_date
+Inside the employees' table, there is data about each employee in the company
+
+
+Of course, a real-world company would have many more employees. We use a small table to illustrate concepts. 
+
+Type of Databases
+Typically, there are two main database storage types:
+
+Relational Database - SQL
+
+Non-Relational Database - NoSQL
+
+A relational database is a type of database that stores and provides access to data points that are related to one another. Relational databases are based on the relational model, an intuitive, straightforward way of representing data in tables. In a relational database, each row in the table is a record with a unique ID called the key. The columns of the table hold attributes of the data, and each record usually has a value for each attribute, making it easy to establish the relationships among data points.
+
+Actually, the term "relational database" was invented by E. F. Codd at IBM in 1970. Codd introduced the term in his research paper "A Relational Model of Data for Large Shared Data Banks". In this paper and later papers, he defined what he meant by "relational". One well-known definition of what constitutes a relational database system is composed of Codd's 12 rules. However, no commercial implementations of the relational model conform to all of Codd's rules, so the term has gradually come to describe a broader class of database systems, which at a minimum:
+
+Present the data to the user as relations (a presentation in tabular form, i.e. as a collection of tables with each table consisting of a set of rows and columns);
+Provide relational operators to manipulate the data in tabular form.
+A software system used to maintain relational databases is called a Relational Database Management System (RDBMS).  Here are some examples of RDBMS:
+
+Amazon Aurora
+Amazon RDS
+Microsoft SQL Server 
+Oracle Database
+MySQL
+IBM DB2
+Maria DB
+PostgreSQL
+SQLite
+SQL (stands for Structured Query Language) is accepted as the standard Relational Database Management System (RDBMS) language. So we usually prefer to call Relational Database as SQL and Non-Relational database as NoSQL. 
+
+Until now in the course, what we've shown you some relational database features (structured data, tables, rows, columns, etc). Of course, there are more than those features coming in the upcoming parts of the course. During the pre-class phase of the SQL course, we will use SQLite as an RDBMS tool. 
+
+💡Tips:
+SQLite is a relational database management system contained in a C library. In contrast to many other database management systems, SQLite is not a client–server database engine. Rather, it is embedded into the end program. (Wikipedia)
+Structured Query Language (SQL)
+
+SQL stands for Structured Query Language and used to communicate with relational databases. SQL is a declarative language, not a procedural language. You write a single SQL declaration and hand it to the DBMS. The DBMS then executes internal code, which is hidden from us. 
+
+💡Tips:
+Declarative paradigm is where you say what you want without having to say how to do it. With procedural paradigm (used in JAVA, C), you have to specify exact steps to get the result. SQL is declarative than procedural since the queries don't specify steps to produce the result.
+SQL in it's purest form is not a programming language, but a query language. Because, it needs to be able to perform loops and control structures. However, with some extensions, SQL can have looping and control structures but they exist outside or rather as an appendage to the original SQL spec. In this manner, some argue that SQL is a programming language.
+
+Most commercial database systems employ the SQL language. With SQL, you can access or manipulate data stored in the database. There are different types of access. These are:
+
+Retrieval of data from the database
+
+Insertion of new data into the database
+
+Updating the data in the database
+
+Deletion of data from the database
+
+Besides, you can create new databases and tables using SQL. 
+
+
+
+
+In the next section, we will focus on the retrieval portion of the SQL. There is a particular word that is called query for retrieval information from the database. You will often encounter this word during your SQL course journey.
+
+ⓘ A query is a statement asking for the retrieval of information from the database.
+
+SQL Language Elements
+SQL language structure is easy to understand. It looks like plain English. Here is an example SQL statement:
+
+
+If we apply this SQL statement to our employees table, we get a single column that is first_name. See the command in action below: (Note: if the below gif doesn't play fast, please refresh the page)
+
+
+
+The whole command SELECT first_name FROM employees; is called statement. Let's breakdown of this statement. Herein SELECT, FROM words are keywords. They are special commands for SQL. first_name, employees are identifiers. SQL statements end with a semicolon (;).  SQL Language Elements is also called SQL Syntax. 
+
+
+
+There are other SQL elements which we will cover later in the course. In the next part, we will introduce you SELECT statement in detail. We will learn the syntax and start to write our commands.
+
+
+
+
+SELECT Statement
+Introduction
+In this lesson, you will focus on the SELECT statement in SQL. Generally;
+The SELECT statement is used to select data from a database.
+You can retrieve rows from the columns of the table by using this statement. 
+SELECT statement is used with FROM keyword.
+The syntax of the SELECT statement can be seen below.
+
+By using this query, you explain to SQL that you want to see the data from a column/columns in the given table. The result of the query is stored in a result table called result-set.
+
+
+
+
+Basic Syntax
+The term syntax in SQL refers to strict structural patterns used when creating a query. As in any other programming language, SQL also has some general syntax rules to follow. But these rules are very flexible compared with others. Let' look at the syntax of the last query again.
+
+
+
+As you see, SELECT and FROM words were written in uppercase, and the query ends with a semicolon. Is this usage example a syntax rule? In SQL syntax;
+
+SQL statements start with a keyword like SELECT, INSERT, UPDATE, DELETE, etc. and all the statements end with a semicolon (;).
+The semicolon at the end indicates that the statement is completed and ready to be executed.
+SQL is also case insensitive, which means you can use both SELECT and select in your query. They mean the same thing for SQL.
+Writing SQL commands in the upper-case is the most common and preferred style. But, you can write the same query in both ways as below:
+
+
+
+White spaces and empty lines are ignored in SQL. So, the below query is correct by all means.
+
+💡 Tip: To maintain your query clean and more readable, it's not recommended to use unnecessary empty lines and white spaces .
+
+Selecting Multiple Columns
+
+
+Assume that;
+
+You have a table named as table1 like above.
+You want to see only column1 and column2 data in it.
+Then, you should write a query like this:
+query :
+
+
+After you execute this query, SQL will return you only the data that you want from column1 and column2 of table1.
+
+output :
+
+
+
+Selecting All Columns
+
+
+Assume that; this time you want to see all of the data in your table.
+
+You have 3 columns in your table, so you should write a query like this.
+
+query :
+
+
+Because you wrote the names of all the columns in the SELECT statement, you will get the whole table via this query.
+
+output :
+
+
+Ok, it's not difficult to write 3 columns in this case, but think about you have a big table with lots of columns.
+Would you have to write all the column names in your query?
+
+Selecting All Columns (Special Character)
+The asterisk character “*” has special meaning in SQL.
+
+To retrieve all of the information from your table, an asterisk (*) character can be used after the SELECT command.
+
+So, you wouldn't have to type in each of the column names separately.
+
+query :
+
+
+By using the asterisk character “*”, you can get every column with all of the data in it as a result-set of the query.
+
+output :
+
+
+
+DISTINCT Clause
+Introduction
+In this lesson, you will focus on the SELECT DISTINCT statement in SQL. Columns in the tables may often contain some duplicate values, but you may only need the distinct values as a result. Here comes the SELECT statement with the DISTINCT clause.
+
+ⓘ Info: We have learned what the statement and keyword are. Here is another term which we introduced to you in this lesson: Clause. We want to define each three terms to help you gain better understanding. We will use query SELECT first_name, last_name, gender FROM employees; as an example to explain the concepts.
+Keyword: These are the individual elements which are predefined. In the example these are SELECT and FROM seperately.
+Clause: It's a part of a SQL statement. In our example, these ere SELECT first name, last name, gender and FROM employees.
+Statement: The complete query is a statement. A statement may consist of two or more clauses.
+The SELECT DISTINCT is used to return only distinct (different/unique) values to eliminate duplicate rows in a result set. Here is the syntax of the DISTINCT clause:
+
+
+By using this query, you explain to SQL that you only want to see the unique/distinct data from the column/columns in the given table
+No Duplicated Rows
+
+
+Assume that;
+
+ You have a table named as student_table like above.
+ You want to see only UNIQUE Values in student_column in the result set.
+ Then, you should write a query like this. 
+query :
+
+After the execution of the query, you will get a result set like below.
+output :
+
+As you see in the result set, the query returned all the rows in the student column. Because all the rows in that column have unique values. So, in this example, we can see that if there are no duplicated rows in a column, SELECT and SELECT DISTINCTgives the same result.
+
+Duplicated Rows
+
+
+Let's write a different query to select unique lesson names from the lesson column. You should write a query like this.
+query :
+
+
+There are 7 rows in the student_table. But the result set has only 4 rows. Why?
+ Lesson column consists of the following lessons; 3 Mathematics, 2 Physics, a Literature, and a Chemistry.
+ So there are 3 duplicated rows of which 2 Mathematics and 1 Physics.
+ DISTINCT clause eliminated 3 rows and so we get 4 unique rows.
+
+
+
+
+
+WHERE & LIMIT Clauses
+Introduction
+In this lesson, you will focus on the WHERE clause in SQL. The WHERE clause is used to filter records.
+ It allows you to define a specific search condition for the result set returned by a query.
+ So, the result set only consists of the records that fulfill the predefined condition(s).
+The WHERE clause is mostly used with the SELECT statement. In addition to the SELECT statement, it may also be used with some other statements like DELETE and UPDATE. It's used in a query after the FROM clause as in the below example.
+
+By using this query, you explain to SQL that you only want to get the data that pass the defined condition(s) as a result set.
+
+WHERE Clause - Operators
+You can use the following operators in the WHERE clause. 
+
+
+
+Assume that;
+
+You have a table named student_table as above. 
+
+If we want to select only the records of which grade is higher than 70 in the result set, then we should write a query like this.
+
+query :
+
+After the execution of the query, you will get a result set like below.
+output:
+
+
+
+Example-1
+
+
+
+
+You want to see only the records of which lesson is Mathematics in the result set.
+Then, you should write a query like this.
+query :
+
+
+
+After the execution of the query, you will get a result set like below.
+
+output :
+
+
+
+
+Example-2
+
+Let's write a different query to select only the records of which grade is lower than 70 in the result set. Our  query will be as below:
+query :
+
+After the execution of the query, you will get a result set like below.
+output:
+
+
+LIMIT Clause
+In this lesson, you will focus on the LIMIT clause in SQL. The LIMIT clause is used to filter records. It constrains the number of rows returned by a query. Assume that your query returns one thousand rows. But you only want to see the first 10 rows in the result set. In such cases, we use LIMIT clause to obtain the desired output. 
+
+Here is the syntax of the LIMIT clause.
+
+Let's select all the columns of the student_table and return the first 3 rows.
+
+query:
+
+output:
+
+We can also combine LIMIT with WHERE. LIMIT clause is placed after the WHERE clause. Let's select the students whose grade is higher than 70 and let our query return the first 2 rows.
+
+query:
+
+output:
+
+
+
+
+
+ORDER BY Clause
+
+SELECT statement returns records in an unspecified order. In case you want to retrieve data in alphabetical or numeric order, we use ORDER BY keyword. 
+
+The ORDER BY keyword sorts the result-set in descending or ascending order.  
+
+By default ORDER BY keyword sorts the records in ascending order. Use the keyword DESC to sort the records in descending order. You can also use ASC to sort the data in ascending order. You have to use either of them.
+
+Here is the syntax of ORDER BY:
+
+
+Herein "|" symbol means "use either ASC or DESC". If you don't use any of them, the default value is ASC (ascending order).
+Let's see ORDER BY in an action.
+
+
+Here is our employees table. I want to sort the first_name column in alphabetical order (A-Z). This is the appropriate query:
+
+query :
+
+
+After executing the query, we get the result table below. Our table is now sorted by the first names in ascending order. Not only the first_name column is sorted, but also other columns are affected by the sort accordingly. 
+
+output :
+
+
+You could write the query which returns the same result table as below. Since ASC is the default order value in case you don't specify any ascending or descending order, both queries will yield the same result.
+
+
+Sorting in Descending Order
+In the previous part, we sorted our table by the first names of the employees in ascending order. What if we asked you to sort it in descending order (Z-A)? You would probably say that "I use the DESC keyword." You're right. Let's write the query.
+
+query :
+
+
+Below is the query result. Other columns are also affected.
+
+output :
+
+
+💡 Tip: When you sort the data, the original table's order is not affected. Remember from the previous lessons that a query returns a result table. Thus, we sort the result table, not the original one.
+Until now, we've sorted the column containing textual data. It's time to sort numerical data in our table. You may wonder whose salary is the highest. Let's write the query. This time we don't want to retrieve all columns instead we want first name, last name and salary.
+
+query :
+
+Robert Gilmore, Operations Director, has the highest salary. We sorted the result table from largest to smallest.
+
+Sorting By Multiple Columns
+We are now able to sort by one column using the ORDER BY keyword. In some cases, we may need to sort our data by two columns or more. To do this, separate the columns by a comma. Here is the syntax:
+
+
+
+
+Above is our original table. Let's sort it by gender in descending order. 
+
+query :
+
+
+
+Here is the result-set:
+
+output :
+
+In the above output, you can see that the result table is sorted in descending order according to the gender of the employees. Suppose that we also want to sort it by first names. 
+
+
+
+In this case, we have to append the first_name column to our existing query. Use a comma to add the new column.
+
+query :
+
+Here is the output:
+
+output :
+
+
+In the above example, we first sorted the data by gender, then we sorted by first names.
+
+ORDER BY Clause
+
+ORDER BY Clause with WHERE Clause
+In this part, we will use ORDER BY with the WHERE clause. 
+
+This is the syntax:
+
+
+ORDER BY clause is placed after the WHERE clause. 
+
+Technically, any SQL statement can be written on a single line. However, it will become difficult to read when you start to write long queries. The solution in such cases is to organize the code, not just horizontally, but also vertically. This is called beautifying. Let's rewrite the syntax above. 
+
+
+
+As you see that we put each clause on a separate line. Now let's continue with an example. 
+
+
+
+
+Assume that we try to find the employees whose salary is higher than $80,000. Next, we will sort it by first_name in descending order. 
+
+Here is the query:
+
+query :
+
+
+This is our result table:
+
+output :
+
+
+
+We first returned the employees whose salary is higher than $80,000. Next, we sorted this by the first names in descending order. Alright, we now know how to sort our table. It's time to put them into practice.
+
+
+
+
+
+AND, OR & NOT Operators
+
+
+Introduction
+In SQL, AND, OR & NOT keywords are called operators. In particular, they are called logical operators. Their purposes are filtering the data based on conditions. 
+
+The WHERE clause can be combined with AND, OR & NOT operators. Let's start with the AND operator. 
+
+
+
+
+
+
+
+
+AND Operator
+The AND operator is used with the WHERE clause and combines multiple expressions. It returns only those records where both conditions (in WHERE clause) evaluate to True. The syntax has the following form in the WHERE condition:
+
+
+
+
+Now, display the employees whose title is a data scientist and gender is male. You would be asked for the same thing as "show me the male data scientists in the company. " They are both the same. 
+
+
+
+
+
+There are two conditions here. One is the title of the employee is a data scientist, other is the gender of his/her should be male. The correct search condition in where clause is job_title = 'data scientist' AND gender = 'Male'.
+
+Let's write the query.
+
+query :
+
+
+
+There is only one record that meets both conditions. So only one record returns. 
+
+output :
+
+
+
+
+OR Operator
+The OR operator is used with the WHERE clause and combines multiple expressions. It displays the record where either one of conditions (in WHERE clause) evaluates to True. The syntax has the following form in the WHERE condition. 
+
+
+
+
+Display the employees whose title is a data scientist or gender is male.
+
+
+
+
+
+query :
+
+
+
+The query returns all the male employees and data scientists. Since there is a female data scientist, the result table also displays it.
+
+
+output :
+
+As we mentioned above, the records which meet either of the conditions return as a result. 
+
+
+NOT Operator
+
+
+The NOT operator is used to negate a condition in the WHERE clause. NOT is placed right after WHERE keyword. You can use it with AND & OR operators. Here is the syntax of NOT operator.
+
+
+
+Display the male employees.
+
+At first, you may write this query:
+
+
+
+We can also write it in another way using NOT operator.
+
+query :
+
+Both queries will yield the same result below.
+
+output :
+
+
+
+
+
+
+
+BETWEEN OPERATOR
+
+
+Introduction
+The BETWEEN operator is used for comparison in WHERE clauses. It's a comparison operator. You can use it to test if a value is in a range of values. If the value is in the specified range, the query returns all records fallen within that range. 
+
+The following displays the syntax of the BETWEEN operator:
+
+
+
+
+Note that the BETWEEN operator is inclusive. The above syntax can be written as follows:
+
+
+
+☝ Important: The BETWEEN operator is inclusive. To specify an exclusive range, use the greater than (>) and less than operators (<).
+
+
+
+If we need to find the names of the employees with salary amounts between $80,000 and $90,000, we can use the BETWEEN comparison operator to write:
+
+query :
+
+
+
+Here is the output:
+
+output :
+
+
+You could also write the above query as follows:
+
+They both return the same result table.
+
+NOT BETWEEN
+We can use NOT BETWEEN to negate the result of the BETWEEN operator. The following is the syntax:
+
+
+
+
+For instance, you need to find the employees whose salary is not between $80,000 and $90,000. Here is the query:
+
+query :
+
+
+
+output :
+
+
+
+There are seven employees whose salary is not between $80,000 and $90,000.
+
+
+
+BETWEEN with Date Example
+It's also possible to use the BETWEEN operator with dates. 
+
+Assume that we try to find employees who have joined the company from June 1, 2018 to March 31, 2019. We also want to sort by hire date in ascending order.
+
+
+
+Let's write the query. 
+
+
+☝ Important: Please enclose your date values with single quote (') and use YYYY-MM-DD date format in your query.
+query :
+
+
+
+output :
+
+
+
+There are five employees who have joined the company from June 1, 2018 to March 31, 2019.
+Now, it's time to put your theory into practice. Enjoy your playground. Feel free to write as many queries as you wish.
+
+
+
+
+IN Operator
+
+Introduction
+The IN operator is used to determine whether a value matches any value in a list. We use IN operator with WHERE clause. Following is the syntax of the IN operator:
+
+
+
+Suppose that you are building a team in your company. The team is comprised of Data Scientist and Business Analyst. You need to search the employee table to find the right candidates for your team. You may come up with this query:
+
+query :
+
+
+That's a correct query which returns this:
+
+output :
+
+
+
+Three people meet your criteria.
+
+However, there is a better operator in case you try to match a value in a specified list. We may rewrite the query as follows:
+
+
+
+The query retrieves the employees whose job title is Data Scientist or Business Analyst. Herein the value list is ('Data Scientist', 'Business Analyst'). When any value in the job title column matches one of the values in the list, the related row is returned.
+
+An Extended Value List
+Suppose that you have decided to add teammates to your existing team. In addition to data scientist and business analyst, you are in need of a project manager and web developer. You modified the old query in which you used the OR operator.
+
+Here is the new query:
+
+query :
+
+
+Below is the output:
+
+output :
+
+
+
+Then you thought that it's a better idea to use IN operator and revised the query using IN operator as below:
+
+
+This query also returns the same result table. Six people meet your criteria.
+As you can see that using the IN operator makes your code shorter.
+
+💡 Tip: If you have a query in which you use many OR operators, consider using the IN operator instead. This will make your query more readable.
+Please write all the queries in the playground.
+
+NOT IN Operator
+In this part, we are going to add the keyword NOT to our IN operator.  You're building a team again. This time you decided to select the right candidates in a different way. You don't want to include Operations Director, HR Manager, and Sales Manager in the team.
+
+
+
+If we know which values we don't want to include in a list, we can use NOTkeyword with IN. NOT gives you the opposite results, anything that doesn't match the list. Use NOT just before IN operator.
+Let's write the query:
+
+ query :
+
+
+
+The following is the output:
+
+
+There are seven employees whose job title is not in the Operations Director, HR Manager, Sales Manager list. Alright, we completed the IN operator.
+
+
+
+
+LIKE Operator
+
+
+Introduction
+There are some cases where you don't know exactly the complete value you query. For instance, consider that you're trying to recall a student's county info from our student_info table. You know that the county's name starts with 'Wo'. In such cases, we use LIKE operator.  We combine LIKE operator with WHERE clause.
+
+The general syntax is:
+
+
+
+After LIKE keyword, we construct a pattern. SQL provides two special characters for constructing patterns. These are also called wildcards.
+
+Percent (%): The % character matches any sequence of zero or more characters.
+Underscore ( _ ): The _ character matches any single character.
+Patterns are case insensitive. Uppercase characters do match lowercase characters or vice versa. Let's show pattern matching in the following examples. You will find some pattern examples which can be used after the LIKE operator. Patterns are written in single quotes.
+
+'Out%' pattern matches any string beginning with "Out" such as "Outro".
+'s%' pattern matches any string that starts with "s" such as "silk", "soup", etc.
+'%per%' pattern matches any string containing "per" such as "percentile" and "peeper". 
+'s_n' pattern matches "son", "sun", etc. 
+'__te' pattern matches "mate", "Kate", "kate", etc.
+
+Now. Let's try to find a solution to our question at the beginning. We were trying to recall the county name which starts with "Wo". Since we don't know how many letters coming after "Wo", it's a good idea to use % wildcard here. Here is the pattern 'Wo%'. 
+
+
+This is the query:
+
+query :
+
+
+
+Result table:
+
+output :
+
+
+
+
+% wildcard matches with the letters 'od' in the Wood word. Remember that %wildcard matches any sequence of zero or more characters. 
+
+
+
+Since LIKE operator is case insensitive, you could write the pattern LIKE 'wo%' . Both patterns will produce the same results.
+
+Percent Character Example
+In this part, we continue with another example using % wildcard. 
+
+Suppose that we try to find front-end and back-end developers in our student_info table. If we look at the field column, we see that the word "Developer" is found at the end of the each field value. So, what do you think the pattern will be?
+
+
+The pattern is '%Developer'. Herein % wildcard will include all the characters before the word "Developer". Let's write the query:
+
+query :
+
+
+
+The output of the query:
+
+output :
+
+
+There are 12 students whose field is Back-End Developer or Front-End Developer. We could write the pattern as '%Developer%'. This also returns the same result table. There is no character coming after the word "Developer". But remember % wildcard also matches zero characters.
+
+In the previous part, we said that LIKE operator is case-insensitive. That means instead of '%Developer', we can write '%developer', '%DEVELOPER' even '%DEveloper'. All those patterns will match "Back-End Developer" or "Front-End Developer". 
+
+However, if you want to make LIKE operator case-sensitive, we need to use PRAGMA statement as follows:
+
+
+
+Write the query again using PRAGMA statement and pattern '%developer'.
+
+query :
+
+
+The output of the new query is a blank table.
+
+output :
+
+
+In case you change the setting of LIKE operator from case-insensitive to case-sensitive, you need to construct the pattern as '%Developer' to match.
+
+Underscore Character Example
+The underscore _ wildcard matches a single character. Think of it as representing a single character. For instance, the following query finds the employee whose first_name is "Elvis".
+
+
+
+query :
+
+
+Here is the output of the query above.
+
+output :
+
+
+
+
+The _ wildcard in the pattern matches "v" letter in "Elvis" in the first name column. 
+
+Which first name the 'Li__a' pattern will match in the first name column? The answer is "Linda". Note that there are two underscore characters in the 'Li__a' pattern. Thus, those will match "nd" letters in "Linda" in the first name column. 
+
+
+
+
+
+This lesson is not ready to be taken.×Dismiss this notification
+
+
+
+
+
+
+
+
+
+
+
+
+
+In this lesson, you will learn about what an aggregate function is, five built-in aggregate functions and how they are used in SQL queries. Besides, you will also learn about how to join the tables using SQL's most common join types which are INNER join and LEFT join.
+
+What is an aggregate function?
+In this section, we will introduce you to aggregate functions. Aggregate functions are functions that take a collection of values as input and return a single value. SQL has five built-in aggregate functions:
+
+COUNT (Count)
+MIN (Minimum)
+MAX (Maximum)
+SUM (Total)
+AVG (Average)
+
+
+
+SUM and AVG functions must take only numeric values as input. However, the other functions (MIN, MAX, COUNT) may take non-numeric values (strings, date, etc.) as input other than numeric values. Before we dive into the aggregate functions, we should learn an important concept which is NULL. 
+
+NULL means no data and is a special value. It shows us that a piece of information is unknown or missing or not applicable. For instance, let's assume that we have a song database and we don't know the writers of some of them. We don't have that information. So, to store these unknown songwriters in a database table, we must use NULL. If a table has NULL value, then it will be displayed as NULL.
+
+💡Tips:
+NULL value represents the unknown value or missing value or not applicable.
+NULL is not equal to zero or empty string.
+NULL is not equal to itself.
+It's important to understand what nulls mean and to know how to work with them. They are often ignored in our aggregation functions.
+
+Alright, let's start with COUNT function.
+
+
+COUNT
+Introduction
+We use COUNT function to count the numbers of records (a.k.a row) in a table. Here is the syntax of the COUNT function:
+
+
+
+
+Use COUNT keyword immediately after SELECT keyword. Then specify the column on which you want to operate. 
+Suppose that we want to count how many students enrolled in the courses. 
+
+
+Let's write the query as follows:
+
+query :
+
+
+The output of the query:
+
+output :
+
+
+32 students enrolled in the courses. 
+This query counts all the first names in the student_info table. You would reach the same result if you used COUNT(last_name). There is another special character returning the number of rows in a table. That is * character.  Use it inside the COUNT function as COUNT(*). 
+
+If you notice that the header of the output query is displayed as COUNT(first_name). However, we can customize the header using AS keyword. AS is used to rename a column or table with an alias. This is the syntax:
+ SELECT column_name AS alias_name
+
+Let's rewrite the query above:
+
+query :
+
+
+
+output :
+
+
+
+As you see that what you wrote after AS keyword is displayed as a column header. 
+
+An important point for COUNT(*) function is that the result table includes NULL and duplicate values. If you want the number of non-null values, use the syntax COUNT(column_name).
+
+
+
+COUNT DISTINCT
+In some cases, we may want unique values. For instance, let's find how many different fields there are in the student_info table.
+
+
+
+First, write this query:
+
+query :
+
+
+
+The output of the query:
+
+output :
+
+
+
+As you see that there are 32 fields. But, is that the correct number? Absolutely no. There are duplicate values. For instance, there is more than one student who enrolled in the course in the field of Data Science. COUNT(field) counts the duplicate rows as separate rows. So, we need to use COUNT(DISTINCT column_name) function here.
+
+query:
+
+
+output:
+
+
+Actually there are 6 unique or distinct fields in which students may enroll. COUNT(DISTINCT field) returns the number of unique and non-null values in column field.
+
+We can also combine COUNT(DISTINCT) or COUNT() functions with WHERE clause. 
+
+For instance, display the number of students from Virginia.
+
+query :
+
+
+output :
+
+There are 14 students from Virginia state.
+
+
+MIN and MAX
+MIN Function
+MIN function returns the minimum value in the selected column.
+
+The syntax of the MIN function:
+
+
+The MIN function ignores the NULL values. Thus, it retrieves the non-NULL minimum value in the selected column.
+
+
+
+Alright, let's see it in an example. Who gets paid the lowest wage in the company?
+
+query :
+
+output :
+
+
+We can also combine MIN function with WHERE clause. Let's move the query above to the next level. Display the female employee who gets paid the lowest.
+
+query :
+
+
+
+output :
+
+The lowest salary is $67,000 among female employees.
+
+You can use ORDER BY and LIMIT keywords to get the minimum value in a selected column. This will yield the same result as in the MIN function.
+
+The MIN function can also be used with dates. For instance, display the earliest hired employee's date.
+
+query :
+
+output :
+
+
+MAX Function
+MAX function returns the maximum value in the selected column. With the MAX function, you can find the highest salary among the employees, the most expensive products, the longest track, etc.
+
+The syntax of the MAX function:
+
+
+
+
+The MAX function ignores the NULL values.
+
+Alright, let's take the same example in the previous part. But, this time find the highest wage in the company.
+
+query :
+
+output :
+
+The highest salary is $110,000 among male employees. This amount is also the highest one among all employees.
+
+You can use ORDER BY and LIMIT keywords to get the maximum value in a selected column. This will yield the same result as in the MAX function.
+
+The MAX function can be used with dates. For instance, we can display the newest hired employee's date as below:
+
+ query :
+
+output:
+
+
+
+
+
+
+
+
+
+
+SUM and AVG
+SUM Function
+SUM function returns the sum of a numeric column. 
+
+The syntax of the SUM function:
+
+
+Now, let's calculate the total amount of the salary of the employees in the company.
+
+
+
+query:
+
+
+
+output:
+
+
+
+The amount of the total salary is $836,000. We can breakdown this into categories. For instance, we can find the total amount of salary of female employees.
+
+
+query:
+
+
+
+output:
+
+
+AVG Function
+AVG function calculates the average of a numeric column.
+
+The syntax of the AVG function:
+
+
+What is the average salary of the employees? 
+
+query:
+
+
+output:
+
+
+The average salary of the employees is $83,600.  The total amount of the salary is $836,000. Since there are 10 employees, the average salary is $836,000/10 = $83,600. We just proved it.
+
+Now, let's find the average salary amongst male employees. 
+
+input:
+
+output:
+
+
+
+
+
+
+Aggregating with Grouping
+GROUP BY Clause
+There are some cases where we may need to apply the aggregate function not only to a selected group of rows. In the previous parts, we found the total amount of salaries of male and female employees separately.  What if want to show them in the same result table grouped by their gender. In such cases, we use GROUP BY statement. 
+
+The GROUP BY clause groups the rows into summary rows. It returns one value for each group and is typically used with aggregate functions (COUNT, MAX, MIN, SUM, AVG).
+
+The syntax is:
+
+
+In case a WHERE clause is used, the GROUP BY clause should come after the WHERE clause. We specify the column or a list of comma-separated columns right after the GROUP BY.  Any nonaggregate expression in the SELECT must be included in the GROUP BY clause.
+
+We've mentioned that the GROUP BY clause is often used with aggregate functions. Now, let's see how it is.
+
+GROUP BY with COUNT Function
+
+
+The following statement returns the number of employees per gender. 
+
+query:
+
+
+output:
+
+☝ Important: The GROUP BY clause groups results before calling the aggregate function. This allows you to apply aggregate function to groups than the entire query.
+Now, let's write another query. What is the number of employees working as a data scientist? Break down it by gender.
+
+query:
+
+
+output:
+
+💡Tips:
+WHERE clause operates on the data before the aggregation.
+WHERE clause happens before the GROUP BY clause. 
+Only the rows that meet the conditions in the WHERE clause are grouped. 
+
+GROUP BY with MIN&MAX Functions
+Let's find the minimum salaries of each gender group using the MIN function.
+
+query:
+
+
+output:
+
+Similarly, we can find the maximum salaries of each group using the MAX function.
+
+query:
+
+output:
+
+
+You may also use the ORDER BY clause to sort the salaries in descending or ascending order.  The ORDER BY follows GROUP BY. For instance, sort the maximum salaries for each group in descending order.
+
+query:
+
+
+output:
+
+
+
+💡 Tip: When sorting, you can use the alias with ORDER BY clause as we did in the query above (ORDER BY max_salary). You may also use the original aggregate function as ORDER BY MAX(salary)
+
+GROUP BY with SUM&AVG Functions
+In the previous part, we have learned how to use MIN and MAX functions with the GROUP BY clause. In this part, we will continue with SUM and AVG functions. Let's go with the same scenario. In this case, we will calculate the total salaries of each group (gender).
+
+query:
+
+
+
+output:
+
+
+Similarly, we can find the average salaries of each group using the AVG function.
+
+query:
+
+
+
+output:
+
+
+You may also use the ORDER BY clause to sort the salaries in descending or ascending order. For instance, sort the total salaries for each group in descending order.
+
+query:
+
+
+
+output:
+
+
+
+
+
+What is JOIN?
+
+Introduction
+In this section, we will introduce you to JOIN clauses. A JOIN clause is used to combine two or more tables into a single table. Joins are usually applied based on the keys that define the relationship between those tables or on common fields. 
+
+💡Tips:
+In most cases this joins are created using the primary key of one table and the foreign key of the table we want to join it with.
+We've added a new table "departments" to our company database. We have now two tables "employees" and "departments" in the database. Now let's examine those two tables. In the "departments" table, the names of the employees are not written, only the ID numbers of the employees are written.
+
+Let's look at the "employees" table:
+
+
+
+
+Then, let's look at the "departments" table:
+
+
+When looking at the "departments" table, it is not easy to understand which employee is working in which department, since this table does not contain the names of the employees. For this purpose, two tables should be combined and the name and surname of that employee should be found by looking at the "employees" table for each employee ID in the "departments" table. The "emp_id" is the column that will form the relationship between the two tables above.
+
+JOIN Types
+There are basically five types of JOINs: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN and CROSS JOIN. As a special case, a table can join to itself and this type is called SELF JOIN.
+
+
+
+
+
+Let's make a brief description of JOIN types without going in-depth:
+
+INNER JOIN: Returns the common records in both tables.
+LEFT JOIN: Returns all records from the left table and matching records from the right table.
+RIGHT JOIN: Returns all records from the right table and matching records from the left table.
+FULL OUTER JOIN: Returns all records of both left and right tables.
+CROSS JOIN: Returns the Cartesian product of records in joined tables.
+SELF JOIN: A join of a table to itself.
+
+Inner JOIN
+Introduction
+INNER JOIN is the most common type of JOINs. It creates a new result table based on the values in common columns from two or more tables. INNER JOIN returns a table that contains only matched rows that meet the specified join conditions.
+
+Here is the syntax of the INNER JOIN clause:
+
+
+
+In this syntax,
+columns: Column names from table_A or table_B.
+table_A, table_B: The names of the joined tables.
+join_conditions: It specifies the conditions to evaluate for each pair of joined rows.
+A join condition generally takes the following form: table_A.column = table_B.column. The operator in this statement is usually an equal sign (=), but any comparison operator can also be used.
+💡Tips:
+Note the ON keyword for specifying the INNER JOIN condition.
+Multiple join conditions can be written using AND or OR statements.
+In addition, three or more tables can be combined using the INNER JOIN clause. The syntax used to join three or more tables is as follows:
+
+
+Example
+Suppose you want to join the "employees" table and the "departments" table. In this example, an INNER JOIN has been created that is based on the emp_id columns in the two tables:
+
+Tables
+
+"employees" table:
+
+
+"departments" table:
+
+To understand easily how INNER JOIN works, we can use the following visual explanation. The intersection of the two tables represents the matching rows.
+
+
+Syntax
+
+The INNER JOIN keyword selects all rows from both "employees" and "departments" tables as long as there is a match between the columns. If there are records in the "employees" table that do not have matches in "departments", these records are not shown in the output.
+
+query:
+
+
+
+output:
+
+
+As you can see from the output, the seven employees in the "employees" table have matches in the "department" table. The remaining three employees are not listed in the output. As you can see, employee ID 17679 is in both tables and matches, so it is included in our output table. On the other hand, employee ID 49714 is included in the employee table but not in the department table and there is no match. Therefore, employee ID 49714 is not included in the output table.
+
+
+
+Left JOIN
+
+Introduction
+In this JOIN statement, all the records of the left table and the common records of the right table are returned in the query. If no matching rows are found in the right table during the JOIN operation, these values are assigned as NULL.
+
+Here is the syntax of the LEFT JOIN clause:
+
+
+
+In this syntax,
+columns: Column names from table_A or table_B.
+table_A, table_B: The names of the joined tables.
+join_conditions: It specifies the conditions to evaluate for each pair of joined rows.
+LEFT JOIN and LEFT OUTER JOIN keywords are exactly the same. OUTER keyword is optional.
+
+
+
+💡Tips:
+
+If no match is found for a particular row, NULL is returned.
+Example
+Suppose you want to join the "employees" table and the "departments" table. In this example, a LEFT JOIN has been created that is based on the emp_id columns in the two tables:
+
+Tables
+
+"employees" table:
+
+
+"departments" table:
+
+
+
+To understand easily how LEFT JOIN works, we can use the following visual explanation. The shaded area represents all rows in the "employees" table and all matching rows in the "departments" table.
+
+
+
+
+
+Syntax
+
+query :
+
+
+
+output:
+
+
+
+As a result of the LEFT JOIN operation, all ten rows are returned from the "employees" table and all matching rows in the "departments" table are returned. The rows that do not match with the right table are returned as null.
+
+
+
+
+
+Subquery
+Introduction
+A subquery is a SELECT statement that is nested within another statement. The subquery is also called the inner query or nested query. A subquery may be used in:
+
+SELECT clause
+FROM clause
+WHERE clause
+A subquery is usually embedded inside the WHERE clause. You may use comparison operators such as >, <, =, IN, NOT IN with WHERE clause.
+
+Here is the syntax:
+
+
+
+Herein the query
+
+is called the outer query.
+
+The query
+
+is called inner query (nested or subquery query). The inner query is executed first before the outer query. The results of the inner query are passed to the outer query.
+
+There are some rules when using subquery:
+A subquery must be enclosed in parentheses.
+An ORDER BY clause is not allowed to use in a subquery.
+The BETWEEN operator can't be used with a subquery. But you can use BETWEEN within the subquery.
+
+Let's do an example. We'll find the employees who get paid more than Rodney Weaver. Our query should return first name, last name, and salary info of the employees.
+✍ Give it a try before seeing the solution.
+
+query:
+
+output:
+
+The inner query returns 87000 which is the salary of Rodney and passes this value to the outer query, in particular to the WHERE clause. (WHERE salary > 87000)
+In the outer query, WHERE clause filters the employees whose salary is more than 87000 and returns the first name, last name, and salary info of those.
+There are three main types of subqueries:
+
+Single-row subqueries
+Multiple-row subqueries
+Correlated subqueries*
+Single-Row Subqueries
+Single-row subqueries return one row with only one column and are used with single-row operators such as =, >, >=, <=, <>, != . 
+
+Scalar subquery which returns a single row with one column is an example of single-row subqueries. In the previous lesson, we have shown you a single-row subquery example by finding Rodney's salary that returns a single row with one column (87000). 
+
+
+We can also use aggregated functions since it returns a single row with a single column. Now let' s find out the employees who get paid more than the average salary. Our query should return first name, last name, and salary info of the employees. 
+ 
+query:
+
+Let's analyze the query above:
+We've used > operator with WHERE clause.
+The inner query returns the average salary which is 83600 and passes this single value to the outer query.
+Outer query filters those employees and returns those whose salary is more than 83600.
+As you see that combining aggregate functions with subqueries, we have more power to answer our analytical questions.
+
+Multiple-Row Subqueries
+Multiple-row subqueries return sets of rows and are used with multiple-row operators such as IN, NOT IN, ANY, ALL.  Now, let's see it in an example.
+
+As you know that we have added a new table to the company database consisting of one table. Our new table is the departments table. It has three columns and nine rows. Every row represents an employee's department info. Here are our database tables.
+
+
+
+
+Now with that said, find the employees (first name, last name from employees table) who work under the Operations department (departments table). Our query should return first name and last name info. 
+
+query:
+
+
+Let's analyze the query above:
+We've used IN operator with WHERE clause.
+The inner query returns the employees ids who work under the Operations department and passes those to the outer query.
+Outer query filters those employees ids and returns their first_name and last_name as a result set.
+
+
+
+
+Introduction to DDL Commands
+Introduction
+At the beginning of the course, we have mentioned that SQL performs some operations on the database such as retrieval, inserting, updating, creating. Of those, we have seen just SELECT statement for retrieval data operations on the database. As a side note, statements are also called "commands" in some sources. 
+
+Actually these statements are grouped into four main categories:
+
+DDL - Data Definition Language
+DML - Data Manipulation Language
+DCL - Data Control Language
+TCL - Transaction Control Language
+✱ Data Definition Language (DDL) specifies the database schema. The statements used in DDL are CREATE, ALTER, DROP. DDL statements are typically used to set up and configure a new database before we insert data.
+
+✱ Data Manipulation Language (DML) enables users to access or manipulate data. INSERT, UPDATE, DELETE, SELECT are the statements used in DML.
+
+✱ Data Control Language (DCL) is used to grant or revoke access control. Its statements are REVOKE and GRANT.
+
+✱ Transaction Control Language (TCL) controls the transactions of DML and DDL commands. Its statements are BEGIN and COMMIT.
+
+DDL, DML, DCL, TCL are not separate languages. They compose parts of a single database language which is SQL. These are for categorical purposes. In this lesson, we'll learn DDL commands. As a side note, we are not going to cover other languages' commands in our course. 
+
+Before we dive into the DDL commands, we'll start with data types.
+
+
+Data Types
+In SQL, data types define what type of data a column can contain or store. Let's find out the data types of the employees' columns. There is a special function typeof in SQLite to display the data types of the values stored in the columns. 
+
+
+
+query:
+
+
+output:
+
+As you see that emp_id stores integer values, first_name and hire_date store textual values. Different database systems may use different data types though there are common ones and SQLite is no exception.
+
+In SQLite, there are five primitive data types. They are called storage classes. Here are the details of them:
+NULL: The value is a NULL value. NULL values mean missing information or unknown.
+INTEGER: The value is a whole number (positive or negative), stored in 1, 2, 3, 4, 6 or 8 bytes depending on the magnitude of the value.
+REAL: The value is a floating-point value, stored as an 8-byte float. They are real numbers with decimal values.
+TEXT: The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
+BLOB: BLOB stands for a binary large object that can store any kind of data. The value is a blob of data, stored exactly as it was input.
+In SQLite, there is no separate Boolean storage class. Boolean values are stored as integers 0 (false) and 1 (true).
+SQLite doesn't have a storage class allocated for dates and/or times. Instead, you use the TEXT, INTEGER, or REAL to store the date and/or time values. 
+
+💡Tips:
+A storage class is slightly more general than a data type. For example, the INTEGER storage class covers six different integer data types of different lengths. Most of the part, storage class is indistinguishable from data type and the two terms can be used interchangeably.
+SQLite determines the data type of a value based on its data type in accordance with the following rules:
+If a value is enclosed by single or double quotes, it is assigned the TEXT storage class.
+If a value has no enclosing quotes and decimal point or exponent, it is assigned INTEGER storage class.
+If a value has no enclosing quotes, but decimal point or exponent, it is assigned REAL storage class.
+If a value is NULL without quotes, it is assigned NULL storage class.
+If a value has X'ABCD' or x'abcd', it is assigned BLOB storage class.
+
+Example
+As we've learned from the previous part, we can use the typeof() function to check the storage class of value based on its format. Let's look at the examples below. As a side note, you don't always need to use FROM table_name clause if not needed.
+
+query:
+
+
+output:
+
+
+As you clearly see that the format of the values determines the storage class of the values. You may think that the result of typeof('100') is an integer. But there are enclosed single quotes in 100. Remember the rule that if a value is enclosed with single quote or double quotes, it is stored as text.
+
+Alright, it's time to start DDL commands. We'll start with CREATE.
+
+CREATE TABLE
+Introduction
+In this lesson, we will learn how to create a new table in the database. When creating a table, we use CREATE TABLE statement. Here is the syntax:
+
+
+A CREATE TABLE statement specifies the following attributes of the new table:
+The name of the new table
+The database in which the new table is created. This is optional. You don't have to specify. For instance, we could have typed CREATE TABLE table_name (...);
+The name of the columns
+The declared data type of each column
+Now, let's create a table in the students database. The students database has only one table named student_table. If you type the .table command in the playground, the table name(s) of the database will return. .table command is special to SQLite. 
+
+query:
+
+Alright, we'll now add a table to the students database in the next part.
+
+Example
+We will add a table named teachers to our students database. Each teacher has the following information:
+
+Name
+Lesson
+Salary
+Let's create the table.
+
+query:
+
+Now, display the tables in the students database. We must have two tables: student_table, teachers. query:
+
+
+⚠️Avoid:
+Don't try to run DDL commands on the playground. Due to some technical limitations, DDL commands may not work properly. However, you can run DDL commands using DB Browser for SQLite program installed on your local machines. You may also use other RDBMS.
+Constraints
+Constraints are the rules specified for data in a table. We can limit the type of data that will go into a table with the constraints. We can define the constraints with the CREATE TABLE statement or ALTER TABLE statement.
+
+Syntax
+
+
+The following are the most commonly used constraints in SQL:
+
+                                                Constraints
+Constraint Name	Definition
+NOT NULL	Ensures that a column cannot have a NULL value
+DEFAULT	Sets a default value for a column when no value is specified
+UNIQUE	Ensures that all values in a column are different
+PRIMARY KEY	Uniquely identifies each row in a table
+FOREIGN KEY	Uniquely identifies a row/record in another table
+
+Primary Key
+The primary key is a column in our table that makes each row (aka, record) unique. 
+
+💡 Tips: The primary key is used to uniquely identify each record
+A table can have only one primary key. The primary key can consist of one or multiple columns. We define the PRIMARY KEY in the CREATE TABLE statement.
+
+Here is the syntax:
+
+It's also possible to define the primary key at the end of the statement. It's very simple syntax: we just say PRIMARY KEY and put the column name inside the parentheses.
+
+
+We define the primary key to uniquely identify each record. That means the value in the primary key column cannot be repeated. Thus we should choose an appropriate column that meets the criteria of the primary key.
+Let's take the example of employees table. Which column do you think as the best fit for the primary key? 
+The answer is emp_id. Because it has no repetition of data and uniquely identifies each record. In this table, each record represents an employee.
+
+The primary key column cannot contain NULL values. You don't get an error when you don't define a primary key in your table. However, good database design starts with a primary key. In fact, our tables in the database need a primary key. That will ensure row-level accessibility. With the primary key, we can query each table row individually. 
+
+Suppose that we don't have any tables yet in our company database. Let's create the employees table from scratch and define a primary key.
+
+
+
+You may notice that we use NOT NULL constraint with the primary key. But it's not mandatory to use it with the primary key since the primary key is implicitly NOT NULL. 
+
+Foreign Key
+Foreign key is a column in a table that uniquely identifies each row of another table. That column refers to a primary key of another table. This creates a kind of link between the tables. 
+
+Assume that we have a database called store. Let's create two tables as customers and orders inside the store database.
+
+query:
+
+
+Now, we will create the second table called orders. In the orders table, we defined the FOREIGN KEY for the customer_id column and pointed it using REFERENCES to the customer_id column in the customers table.
+
+query:
+
+The customer_id column in the customers table is the PRIMARY KEY in the customers table.
+The customer_id column in the orders table is the FOREIGN KEY in the orders table.
+The customers table is called a parent table.
+The orders table is called a child table.
+Let's insert some values into our newly created tables. We use INSERT INTO statement to add data. The syntax is very straightforward.
+
+
+But, what did we achieved by defining FOREIGN KEY? Using foreign keys ensures that not to destroy the links between the tables. Besides, it prevents invalid data entry into the foreign key column. For instance, you cannot add a new customer_id value to the orders table.
+
+query:
+
+If you run this query, you get a "FOREIGN KEY constraint failed" error. This is also called referential integrity.  Since there is no customer_id '4' in the customers table, we cannot create a new customer_id in the orders table.
+
+Not Null
+A column can include NULL values. A NULL value is a special value that means the value is unknown or does not exist. We can specify if a column can hold NULL values or not when we create a table. By default, all columns (except primary key's column) in a table can hold NULL values unless we explicitly specify NOT NULL constraints. 
+
+We define NOT NULL constraint for a column using the following syntax:
+
+
+The NOT NULL constraint follows the type of the column as you see in the syntax.
+Let's give an example. Suppose that order_number column cannot hold NULL values. That means every order should have an order number.
+
+Let's try to insert a null value to the customer_id.
+
+If you run the query, you will get a "NOT NULL constraint failed" error.
+
+
+
+
+
+
+
+ALTER TABLE & DROP TABLE
+ALTER TABLE Statement
+Unlike other database systems, SQLite supports a limited functionality of the ALTER TABLE statement.
+
+With SQLite ALTER TABLE statement, you can perform two operations:
+
+Rename a table
+Add a new column to a table
+Renaming a Table:
+To rename a table, we use the following ALTER TABLE RENAME TO statement syntax.
+
+
+Adding a New Column to a Table:
+Another operation you can perform with the SQLite ALTER TABLE statement is to add a new column to an existing table. In this case, SQLite appends the new column at the end of the existing columns list.
+
+Here is the syntax of ALTER TABLE ADD COLUMN statement:
+
+
+
+DROP TABLE Statement
+We use DROP TABLE statement to remove a table in a database. The syntax is very straightforward.
+
+
+Let's remove the orders table from the store database and show the tables left in the store database.
+
+query:
+
+As you see that we have only one table left in our database. we have successfully removed the orders table.
+https://www.sqltutorial.org/
+https://www.w3schools.com/sql/
+https://aliozgur.gitbooks.io/git101/content/alistirmalar/
+ column. 
+
+
+
+
+
+This lesson is not ready to be taken.×Dismiss this notification
